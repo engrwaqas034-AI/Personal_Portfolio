@@ -73,26 +73,42 @@ def create_portfolio_docx(output_path, img_path):
 
     p_name = cell_text.paragraphs[0]
     p_name.paragraph_format.space_after = Pt(2)
-    r_name = p_name.add_run("MUHAMMAD WAQAS")
+    r_name = p_name.add_run("ENGR. MUHAMMAD WAQAS")
     r_name.font.size = Pt(22)
     r_name.font.bold = True
     r_name.font.color.rgb = RGBColor(15, 23, 42)
 
     p_title = cell_text.add_paragraph()
     p_title.paragraph_format.space_after = Pt(4)
-    r_title = p_title.add_run("CIVIL ENGINEER  |  BIM & VDC SPECIALIST  |  APPLIED AI & LLM ENGINEER")
+    r_title = p_title.add_run("COMPREHENSIVE ENGINEERING, BIM & AI INNOVATION PORTFOLIO")
     r_title.font.size = Pt(9.5)
     r_title.font.bold = True
     r_title.font.color.rgb = RGBColor(13, 148, 136)
 
     p_contact = cell_text.add_paragraph()
-    p_contact.paragraph_format.space_after = Pt(6)
-    r_contact = p_contact.add_run(
-        "Rawalpindi, Pakistan  |  +92 345 5862998  |  engrwaqas034@gmail.com\n"
-        "Live Portfolio: engrwaqas034-ai.github.io/Personal_Portfolio  |  LinkedIn: linkedin.com/in/muhammad-waqas-27b232214  |  GitHub: github.com/engrwaqas034-AI"
-    )
-    r_contact.font.size = Pt(8.5)
+    p_contact.paragraph_format.space_after = Pt(2)
+    r_contact = p_contact.add_run("Rawalpindi, Pakistan   |   +92 345 5862998   |   engrwaqas034@gmail.com")
+    r_contact.font.size = Pt(9)
     r_contact.font.color.rgb = RGBColor(71, 85, 105)
+
+    p_links = cell_text.add_paragraph()
+    p_links.paragraph_format.space_after = Pt(6)
+    
+    r_l0 = p_links.add_run("Web Portfolio: ")
+    r_l0.font.bold = True
+    r_l0.font.size = Pt(8.5)
+    r_l0.font.color.rgb = RGBColor(13, 148, 136)
+    p_links.add_run("engrwaqas034-ai.github.io/Personal_Portfolio   |   ")
+
+    r_l1 = p_links.add_run("LinkedIn: ")
+    r_l1.font.bold = True
+    r_l1.font.size = Pt(8.5)
+    p_links.add_run("linkedin.com/in/muhammad-waqas-27b232214   |   ")
+    
+    r_l2 = p_links.add_run("GitHub: ")
+    r_l2.font.bold = True
+    r_l2.font.size = Pt(8.5)
+    p_links.add_run("github.com/engrwaqas034-AI")
 
     if os.path.exists(img_path):
         p_img = cell_img.paragraphs[0]
@@ -111,7 +127,7 @@ def create_portfolio_docx(output_path, img_path):
     p_vis.paragraph_format.space_after = Pt(8)
     p_vis.paragraph_format.line_spacing = 1.15
     p_vis.add_run(
-        "Muhammad Waqas represents a new paradigm in the Built Environment: a Civil Engineer, Manager Estate (Technical) at REDAMCO (Ministry of Railways) "
+        "Engr. Muhammad Waqas represents a new paradigm in the Built Environment: a Civil Engineer, Manager Estate (Technical) at REDAMCO (Ministry of Railways) "
         "and Senior Infrastructure Specialist with 15+ years of hands-on field, infrastructure, and project management leadership who has systematically integrated "
         "Building Information Modeling (BIM / VDC), ISO 19650 Information Management, and Applied Artificial Intelligence (LLM & Agentic Workflows). "
         "With a proven background bridging corporate railway asset monetization, client-side megaprojects (Pakistan Railways), GCC industrial mega-structures "
