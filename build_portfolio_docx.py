@@ -87,7 +87,10 @@ def create_portfolio_docx(output_path, img_path):
 
     p_contact = cell_text.add_paragraph()
     p_contact.paragraph_format.space_after = Pt(6)
-    r_contact = p_contact.add_run("Rawalpindi, Pakistan  |  +92 345 5862998  |  engrwaqas034@gmail.com\nLinkedIn: linkedin.com/in/muhammad-waqas-27b232214  |  GitHub: github.com/engrwaqas034-AI")
+    r_contact = p_contact.add_run(
+        "Rawalpindi, Pakistan  |  +92 345 5862998  |  engrwaqas034@gmail.com\n"
+        "Live Portfolio: engrwaqas034-ai.github.io/Personal_Portfolio  |  LinkedIn: linkedin.com/in/muhammad-waqas-27b232214  |  GitHub: github.com/engrwaqas034-AI"
+    )
     r_contact.font.size = Pt(8.5)
     r_contact.font.color.rgb = RGBColor(71, 85, 105)
 
@@ -270,8 +273,8 @@ def create_portfolio_docx(output_path, img_path):
 
     for title, meta, bullets in field_projects:
         p_t = doc.add_paragraph()
-        p_t.paragraph_format.before = Pt(8)
-        p_t.paragraph_format.after = Pt(2)
+        p_t.paragraph_format.space_before = Pt(8)
+        p_t.paragraph_format.space_after = Pt(2)
         p_t.paragraph_format.keep_with_next = True
         r_t = p_t.add_run(title)
         r_t.font.bold = True
